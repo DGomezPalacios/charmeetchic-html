@@ -24,71 +24,45 @@
             </ul>
         </div>
         <div class="iconos">
-            <a href="registro_login.html"><img src="../img/usuario.png" alt="Perfil" class="icono-menu"></a>
+            <a href="login.html"><img src="../img/usuario.png" alt="Perfil" class="icono-menu"></a>
             <a href="#"><img src="../img/buscar.png" alt="Buscar" class="icono-menu"></a>
             <a href="carrito.html"><img src="../img/carrito-de-compras.png" alt="Carrito" class="icono-menu"></a>
         </div>
     </div>
 
     <!-- Contenido -->
+    <!-- Contenido -->
     <div class="seccion">
-        <div class="auth-grid">
-            <!-- Login -->
-            <div class="panel">
-                <h3>Acceder</h3>
-                <form id="formLogin" class="formulario-contacto" novalidate>
-                    <label for="loginUser">Nombre de usuario o correo electrónico *</label>
-                    <input id="loginUser" type="text" autocomplete="username" />
-                    <small id="errLoginUser" class="error-msg" aria-live="polite"></small>
+        <div class="login-wrap">
+            <form id="formLogin" class="panel panel-login" novalidate>
+                <h3 class="login-title">Iniciar sesión</h3>
 
-                    <label for="loginPass">Contraseña *</label>
-                    <div class="inline">
-                        <input id="loginPass" type="password" minlength="6" autocomplete="current-password"
-                            style="flex:1" />
-                        <button type="button" class="toggle-pass" data-target="loginPass" aria-controls="loginPass"
-                            aria-pressed="false" title="Mostrar contraseña">👁</button>
-                    </div>
-                    <small id="errLoginPass" class="error-msg" aria-live="polite"></small>
+                <label for="loginUser">Correo electrónico</label>
+                <div class="field">
+                    <input id="loginUser" type="email" placeholder="Ingresa tu correo" autocomplete="username" />
+                </div>
+                <small id="errLoginUser" class="error-msg" aria-live="polite"></small>
 
-                    <div class="inline remember-row">
-                        <input id="remember" type="checkbox" />
-                        <label for="remember">Recuérdame</label>
-                    </div>
+                <label for="loginPass">Contraseña</label>
+                <div class="field">
+                    <input id="loginPass" type="password" placeholder="Ingresa tu contraseña" minlength="6"
+                        autocomplete="current-password" />
+                    <button type="button" class="toggle-pass icon-btn" data-target="loginPass" aria-controls="loginPass"
+                        aria-pressed="false" title="Mostrar contraseña">👁</button>
+                </div>
+                <small id="errLoginPass" class="error-msg" aria-live="polite"></small>
 
-                    <button type="submit" class="btn-primary">Acceso</button>
-                    <p id="msgLogin" class="help" aria-live="polite"></p>
-                </form>
+                <p class="forgot-row">
+                    <a href="#" class="forgot-link">¿Olvidaste tu contraseña?</a>
+                </p>
 
-            </div>
+                <button type="submit" class="btn-primary btn-lg">
+                    <span class="btn-ico">🔒</span> INICIAR SESIÓN
+                </button>
 
-            <!-- Registro -->
-            <div class="panel">
-                <h3>Registrarse</h3>
-                <form id="formRegistro" class="formulario-contacto" novalidate>
-                    <label for="regUser">Nombre de usuario *</label>
-                    <input id="regUser" type="text" autocomplete="username" />
-                    <small id="errRegUser" class="error-msg" aria-live="polite"></small>
-
-                    <label for="regEmail">Dirección de correo electrónico *</label>
-                    <input id="regEmail" type="email" autocomplete="email" />
-                    <small id="errRegEmail" class="error-msg" aria-live="polite"></small>
-
-                    <label for="regPass">Contraseña *</label>
-                    <div class="inline">
-                        <input id="regPass" type="password" minlength="6" autocomplete="new-password" style="flex:1" />
-                        <button type="button" class="toggle-pass" data-target="regPass" aria-controls="regPass"
-                            aria-pressed="false" title="Mostrar contraseña">👁</button>
-                    </div>
-                    <small id="errRegPass" class="error-msg" aria-live="polite"></small>
-
-                    <p class="help" style="margin:10px 0">
-                        Tus datos se utilizarán para procesar tu pedido y mejorar tu experiencia en el sitio.
-                    </p>
-
-                    <button type="submit" class="btn-primary">Registrarse</button>
-                    <p id="msgRegistro" class="help" aria-live="polite"></p>
-                </form>
-            </div>
+                <a class="btn-outline btn-lg" href="registro.html">CREAR MI CUENTA</a>
+                <p id="msgLogin" class="help" aria-live="polite"></p>
+            </form>
         </div>
     </div>
 
