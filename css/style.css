@@ -288,46 +288,101 @@ body {
 }
 
 /* ======= Registro / Login ======= */
-.formulario-registro-login {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 400px;
-    margin: 40px auto;
-    /* centra el formulario en la página */
-    padding: 25px;
-    background: #fafafa;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+/* === Login compacto === */
+.login-wrap {
+    max-width: 420px;
+    margin: 28px auto;
 }
 
-.formulario-registro-login label {
+.panel-login {
+    padding: 28px;
+}
+
+.login-title {
+    margin: 0 0 10px;
+    color: #2b1c0c;
     text-align: left;
-    font-weight: bold;
-    color: #444;
 }
 
-.formulario-registro-login input {
-    padding: 10px;
-    border: 1px solid #bbb;
-    border-radius: 8px;
-    font-size: 1em;
+/* contenedor del input + icono */
+.field {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.field input {
     width: 100%;
+    padding-right: 44px;
+    /* espacio para el ojo */
 }
 
-.formulario-registro-login button {
-    background: #c49b63;
-    color: white;
-    padding: 12px;
-    border: none;
+/* botón ojo dentro del input */
+.icon-btn {
+    position: absolute;
+    right: 8px;
+    height: 34px;
+    width: 38px;
+    border: 1px solid #bbb;
+    background: #fff;
     border-radius: 10px;
-    font-size: 1em;
     cursor: pointer;
-    transition: background 0.3s;
 }
 
-.formulario-registro-login button:hover {
-    background: #a87d4f;
+/* enlace "olvidaste tu contraseña" */
+.forgot-row {
+    margin: 6px 0 16px;
+    text-align: left;
+}
+
+.forgot-link {
+    color: #c0157e;
+    /* puedes usar tu color de marca si prefieres */
+    text-decoration: none;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+/* botón grande */
+.btn-lg {
+    width: 100%;
+    padding: 14px 16px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 6px;
+}
+
+/* iconito de candado (emoji o <img>) */
+.btn-ico {
+    line-height: 1;
+}
+
+/* botón secundario outline */
+.btn-outline {
+    background: #fff;
+    color: #c49b63;
+    border: 2px solid #c49b63;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    transition: background .2s, color .2s;
+}
+
+.btn-outline:hover {
+    background: #c49b63;
+    color: #fff;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+    .login-wrap {
+        margin: 18px auto;
+    }
 }
 
 /* Mensajes de validación */
@@ -705,4 +760,71 @@ body {
     .buscador-input {
         min-width: 150px;
     }
+}
+
+/* === Login: inputs iguales a Contacto + ojo embebido === */
+
+/* El formulario de login ya usa .formulario-contacto: reutilizamos estilos */
+.panel-login .formulario-contacto input[type="email"],
+.panel-login .formulario-contacto input[type="text"],
+.panel-login .formulario-contacto input[type="password"] {
+    width: 100%;
+    border: 1px solid #d7d7d7;
+    /* igual que contacto */
+    border-radius: 10px;
+    padding: 12px 14px;
+    outline: none;
+    box-shadow: none;
+    transition: border-color .15s ease, box-shadow .15s ease;
+    background: #fff;
+}
+
+/* foco, igual que contacto (ajusta si usas otra sombra/color) */
+.panel-login .formulario-contacto input:focus {
+    border-color: #c49b63;
+    box-shadow: 0 0 0 3px rgba(196, 155, 99, .18);
+}
+
+/* wrapper para posicionar el botón ojo */
+.field {
+    position: relative;
+    display: block;
+    /* evita que el botón rompa el layout */
+}
+
+/* deja espacio a la derecha del input para el ojo */
+.field>input {
+    padding-right: 44px;
+    /* 44px = ancho del botón + respiración */
+}
+
+/* botón ojo: sin bordes, embebido, centrado vertical */
+.icon-btn {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    border: none;
+    /* << quita el borde feo */
+    background: transparent;
+    /* << sin fondo pill */
+    border-radius: 8px;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    opacity: .8;
+}
+
+.icon-btn:hover {
+    opacity: 1;
+}
+
+/* mensaje de error debajo, consistente */
+.error-msg {
+    color: #b00020;
+    margin: 4px 0 10px;
+    display: block;
+    min-height: 18px;
 }
