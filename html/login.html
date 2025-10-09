@@ -4,19 +4,19 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Charme et Chic - Registro / Login</title>
+    <title>Charme et Chic - Login</title>
     <link rel="stylesheet" href="../css/style.css" />
 </head>
 
 <body>
-    <!-- Encabezado-->
+    <!-- Encabezado -->
     <div class="encabezado">
         <div class="logo">
             <img src="../img/LOGO.jpg" alt="Logo de Charme et Chic" />
         </div>
         <div class="menu">
             <ul>
-                <li><a href="../index.html"><img src="../img/casa.png" alt="Inicio" class="icono-menu icono-casa"></a>
+                <li><a href="../index.html"><img src="../img/casa.png" alt="Inicio" class="icono-menu icono-casa"></a></li>
                 <li><a href="quienes_somos.html">Quiénes Somos</a></li>
                 <li><a href="catalogo.html">Catálogo</a></li>
                 <li><a href="personalizacion_reparacion.html">Personalización y Reparación</a></li>
@@ -31,38 +31,39 @@
     </div>
 
     <!-- Contenido -->
-    <!-- Contenido -->
     <div class="seccion">
-        <div class="login-wrap">
-            <form id="formLogin" class="panel panel-login" novalidate>
-                <h3 class="login-title">Iniciar sesión</h3>
+        <div class="auth-grid">
+            <div class="panel">
+                <h3>Iniciar sesión</h3>
+                <form id="formLogin" class="formulario-contacto" novalidate>
 
-                <label for="loginUser">Correo electrónico</label>
-                <div class="field">
-                    <input id="loginUser" type="email" placeholder="Ingresa tu correo" autocomplete="username" />
-                </div>
-                <small id="errLoginUser" class="error-msg" aria-live="polite"></small>
+                    <label for="loginEmail">Correo Electrónico *</label>
+                    <input id="loginEmail" type="email" placeholder="Ingresa tu correo" autocomplete="username" />
+                    <small id="errLoginEmail" class="error-msg" aria-live="polite"></small>
 
-                <label for="loginPass">Contraseña</label>
-                <div class="field">
-                    <input id="loginPass" type="password" placeholder="Ingresa tu contraseña" minlength="6"
-                        autocomplete="current-password" />
-                    <button type="button" class="toggle-pass icon-btn" data-target="loginPass" aria-controls="loginPass"
-                        aria-pressed="false" title="Mostrar contraseña">👁</button>
-                </div>
-                <small id="errLoginPass" class="error-msg" aria-live="polite"></small>
+                    <label for="loginPass">Contraseña *</label>
+                    <div class="inline">
+                        <input id="loginPass" type="password" placeholder="Ingresa tu contraseña" minlength="6"
+                            autocomplete="current-password" style="flex:1" />
+                        <button type="button" class="toggle-pass" data-target="loginPass" aria-controls="loginPass"
+                            aria-pressed="false" title="Mostrar contraseña">👁</button>
+                    </div>
+                    <small id="errLoginPass" class="error-msg" aria-live="polite"></small>
 
-                <div class="inline remember-row">
-                    <input id="remember" type="checkbox" />
-                    <label for="remember">Recuérdame</label>
-                </div>
+                    <div class="inline remember-row">
+                        <input id="remember" type="checkbox" />
+                        <label for="remember">Recuérdame</label>
+                    </div>
 
-                <button type="submit" class="btn-primary">Acceso</button>
-                <p id="msgLogin" class="help" aria-live="polite"></p>
-            </form>
+                    <button type="submit" class="btn-primary">Acceder</button>
+                    <p id="msgLogin" class="help" aria-live="polite"></p>
 
+                    <p class="help" style="text-align:center; margin-top:10px;">
+                        ¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a>.
+                    </p>
+                </form>
+            </div>
         </div>
-    </div>
     </div>
 
     <!-- Footer -->
