@@ -2,10 +2,11 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Charme et Chic - Registro / Login</title>
-    <link rel="stylesheet" href="../css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charme et Chic - Login</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/login.js" defer></script>
 </head>
 
 <body>
@@ -16,7 +17,7 @@
         </div>
         <div class="menu">
             <ul>
-                <li><a href="../index.html"><img src="../img/casa.png" alt="Inicio" class="icono-menu icono-casa"></a>
+                <li><a href="../index.html"><img src="../img/casa.png" alt="Inicio" class="icono-menu icono-casa"></a></li>
                 <li><a href="quienes_somos.html">Quiénes Somos</a></li>
                 <li><a href="catalogo.html">Catálogo</a></li>
                 <li><a href="personalizacion_reparacion.html">Personalización y Reparación</a></li>
@@ -24,24 +25,43 @@
             </ul>
         </div>
         <div class="iconos">
-            <a href="login.html"><img src="../img/usuario.png" alt="Perfil" class="icono-menu"></a>
-            <a href="#"><img src="../img/buscar.png" alt="Buscar" class="icono-menu"></a>
-            <a href="carrito.html"><img src="../img/carrito-de-compras.png" alt="Carrito" class="icono-menu"></a>
+            <a href="login.html"><img src="../img/usuario.png" alt="Perfil" /></a>
+            <a href="#"><img src="../img/buscar.png" alt="Buscar" /></a>
+            <a href="carrito.html"><img src="../img/carrito-de-compras.png" alt="Carrito" /></a>
         </div>
     </div>
 
     <!-- Contenido -->
-    <!-- Contenido -->
-    <div class="seccion">
-        <div class="login-wrap">
-            <form id="formLogin" class="panel panel-login" novalidate>
+       <div class="seccion centrada">
+        <h2>Iniciar sesión</h2>
+        <p>Ingresa tu correo y contraseña para acceder a tu cuenta y gestionar tus pedidos:</p>
 
-                <button type="submit" class="btn-primary">Acceso</button>
-                <p id="msgLogin" class="help" aria-live="polite"></p>
-            </form>
+        <form id="formLogin" class="formulario-contacto" novalidate>
+            <label for="loginEmail">Correo Electrónico *</label>
+            <input id="loginEmail" type="email" placeholder="Ingresa tu correo" autocomplete="username" />
+            <small id="errLoginEmail" class="error-msg" aria-live="polite"></small>
 
-        </div>
-    </div>
+            <label for="loginPass">Contraseña *</label>
+            <div class="inline">
+                <input id="loginPass" type="password" placeholder="Ingresa tu contraseña" minlength="6"
+                    autocomplete="current-password" style="flex:1" />
+                <button type="button" class="toggle-pass" data-target="loginPass" aria-controls="loginPass"
+                    aria-pressed="false" title="Mostrar contraseña">👁</button>
+            </div>
+            <small id="errLoginPass" class="error-msg" aria-live="polite"></small>
+
+            <div class="inline remember-row">
+                <input id="remember" type="checkbox" />
+                <label for="remember" style="margin:0;">Recuérdame</label>
+            </div>
+
+            <button type="submit" class="btn-primary">Acceder</button>
+            <p id="msgLogin" class="help" aria-live="polite"></p>
+
+            <p class="help" style="text-align:center; margin-top:10px;">
+                ¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a>.
+            </p>
+        </form>
     </div>
 
     <!-- Footer -->
@@ -49,7 +69,6 @@
         <p>&copy; 2025 Charme et Chic. Todos los derechos reservados.</p>
     </div>
 
-    <script src="../js/registro-login.js"></script>
     <script src="../js/buscar.js"></script>
 </body>
 

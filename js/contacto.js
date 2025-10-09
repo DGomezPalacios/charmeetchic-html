@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const mensaje = document.getElementById("mensaje").value.trim();
 
         // Expresión regular simple para validar email con dominios permitidos
-        const emailRegex = /^[^@\s]+@(duoc\.cl|profesor\.duoc\.cl|duocuc\.cl|gmail\.com)$/i;
+        const emailRegex = /^[^\s@]+@(?:gmail\.com|outlook\.com|hotmail\.com|yahoo\.com|icloud\.com|duoc\.cl|profesor\.duoc\.cl|[^\s@]+\.[^\s@]+)$/i;
 
         if (nombre === "" || mensaje === "") {
             mensajeExito.style.display = "none";
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } else if (!emailRegex.test(email)) {
             mensajeExito.style.display = "none";
             mensajeError.style.display = "block";
-            mensajeError.textContent = "El correo debe ser @duoc.cl, @profesor.duoc.cl o @gmail.com";
+            mensajeError.textContent = "El correo es incorrecto";
         } else {
             mensajeError.style.display = "none";
             mensajeExito.style.display = "block";
