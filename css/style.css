@@ -1,8 +1,13 @@
 /* ======= General ======= */
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color: #222;
+    line-height: 1.5;
 }
 
 /* ======= Encabezado ======= */
@@ -15,13 +20,11 @@ body {
     border-bottom: 1px solid #ddd;
 }
 
-/* Logo principal */
 .logo img {
     height: 70px;
     width: auto;
 }
 
-/* Menú */
 .menu ul {
     list-style: none;
     margin: 0;
@@ -40,14 +43,11 @@ body {
     color: #a67c52;
 }
 
-
 .menu .icono-menu {
     width: 26px;
-    /* mismo tamaño que los de la derecha */
     height: 26px;
     display: block;
     object-fit: contain;
-    /* evita deformación si el PNG tiene “aire” */
     opacity: .85;
     transition: opacity .2s ease, transform .2s ease;
 }
@@ -56,24 +56,17 @@ body {
     opacity: 1;
 }
 
-
-
 .menu a {
     display: flex;
-    /* asegura alineación vertical del icono */
     align-items: center;
     gap: 8px;
-    /* espacio icono-texto */
     text-decoration: none;
     color: #333;
     padding: 8px 10px;
     border-radius: 8px;
     line-height: 1;
-    /* evita desalineo por altura de línea */
 }
 
-
-/* Ajuste especial para el icono de casa */
 .icono-casa {
     width: 22px;
     height: 22px;
@@ -85,8 +78,6 @@ body {
     opacity: 1;
 }
 
-
-/* Iconos (buscar, usuario, carrito) */
 .iconos {
     display: flex;
     align-items: center;
@@ -97,7 +88,6 @@ body {
     width: 26px;
     height: 26px;
     cursor: pointer;
-
 }
 
 /* ======= Catálogo ======= */
@@ -106,32 +96,23 @@ body {
     padding: 30px;
 }
 
-/* ======= Títulos de secciones ======= */
 .catalogo details summary {
     font-size: 1.6rem;
-    /* más grande */
     font-weight: bold;
-    /* más elegante */
     text-align: left;
-    /* alineado a la izquierda */
     cursor: pointer;
     margin: 20px 0 10px 0;
     color: #444;
-    /* tono sobrio */
     padding: 5px 10px;
     border-left: 4px solid #a67c52;
-    /* detalle elegante dorado/marrón */
     border-radius: 3px;
     list-style: none;
-    /* quita viñeta */
 }
 
 .catalogo details[open] summary {
     color: #a67c52;
-    /* cambia color al abrir */
 }
 
-/* Opcional: quita el triangulito feo y ponlo personalizado */
 .catalogo summary::-webkit-details-marker {
     display: none;
 }
@@ -140,7 +121,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: stretch;
-    /* misma altura */
     gap: 30px;
     flex-wrap: wrap;
     margin-top: 20px;
@@ -153,7 +133,6 @@ body {
     width: 200px;
     display: flex;
     flex-direction: column;
-    /* Para alinear verticalmente */
     justify-content: space-between;
     text-align: center;
     background-color: #fff;
@@ -162,9 +141,7 @@ body {
 .producto img {
     width: 100%;
     height: 180px;
-    /* mismo alto para todas */
     object-fit: cover;
-    /* recorta sin deformar */
     border-radius: 5px;
 }
 
@@ -172,7 +149,6 @@ body {
     font-weight: bold;
     margin: 10px 0 5px;
     flex-grow: 1;
-    /* ayuda a mantener espacio */
 }
 
 .producto .precio {
@@ -189,7 +165,6 @@ body {
     border-radius: 5px;
     cursor: pointer;
     margin-top: auto;
-    /* empuja el botón al final */
 }
 
 .producto button:hover {
@@ -206,7 +181,7 @@ body {
     color: #555;
 }
 
-/* Secciones principales */
+/* ======= Secciones principales ======= */
 .seccion {
     max-width: 900px;
     margin: 40px auto;
@@ -214,7 +189,6 @@ body {
     background: #fafafa;
     border-radius: 15px;
     text-align: center;
-    /* centra títulos, párrafos e imágenes */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
@@ -230,7 +204,6 @@ body {
     color: #555;
 }
 
-/* Imágenes dentro de secciones */
 .seccion img {
     max-width: 400px;
     width: 100%;
@@ -244,17 +217,13 @@ body {
     transform: scale(1.05);
 }
 
-/* Formulario de contacto */
+/* ======= Formulario general ======= */
 .formulario-contacto {
     display: flex;
     flex-direction: column;
-    /* hace que los elementos vayan hacia abajo */
     gap: 15px;
-    /* espacio entre cada campo */
     max-width: 500px;
-    /* ancho máximo */
     margin: 0 auto;
-    /* lo centra en la página */
 }
 
 .formulario-contacto label {
@@ -287,379 +256,34 @@ body {
     background: #a87d4f;
 }
 
-/* ======= Registro / Login ======= */
-/* === Login compacto === */
-.login-wrap {
-    max-width: 420px;
-    margin: 28px auto;
-}
-
-.panel-login {
-    padding: 28px;
-}
-
-.login-title {
-    margin: 0 0 10px;
-    color: #2b1c0c;
-    text-align: left;
-}
-
-/* contenedor del input + icono */
-.field {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.field input {
-    width: 100%;
-    padding-right: 44px;
-    /* espacio para el ojo */
-}
-
-/* botón ojo dentro del input */
-.icon-btn {
-    position: absolute;
-    right: 8px;
-    height: 34px;
-    width: 38px;
-    border: 1px solid #bbb;
-    background: #fff;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-/* enlace "olvidaste tu contraseña" */
-.forgot-row {
-    margin: 6px 0 16px;
-    text-align: left;
-}
-
-.forgot-link {
-    color: #c0157e;
-    /* puedes usar tu color de marca si prefieres */
-    text-decoration: none;
-}
-
-.forgot-link:hover {
-    text-decoration: underline;
-}
-
-/* botón grande */
-.btn-lg {
-    width: 100%;
-    padding: 14px 16px;
-    font-weight: 700;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 6px;
-}
-
-/* iconito de candado (emoji o <img>) */
-.btn-ico {
-    line-height: 1;
-}
-
-/* botón secundario outline */
-.btn-outline {
-    background: #fff;
-    color: #c49b63;
-    border: 2px solid #c49b63;
-    border-radius: 10px;
-    text-align: center;
-    text-decoration: none;
-    transition: background .2s, color .2s;
-}
-
-.btn-outline:hover {
-    background: #c49b63;
-    color: #fff;
-}
-
-/* responsive */
-@media (max-width: 900px) {
-    .login-wrap {
-        margin: 18px auto;
-    }
-}
-
-/* Mensajes de validación */
-#mensajeExito {
-    color: green;
-    font-weight: bold;
-    margin-top: 10px;
-    text-align: center;
-}
-
-#mensajeError {
-    color: red;
-    font-weight: bold;
-    margin-top: 10px;
-    text-align: center;
-}
-
-/* ===== Layout base ===== */
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    color: #222;
-    line-height: 1.5;
-}
-
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 16px;
-}
-
-/* ===== Header ===== */
-.encabezado {
-    background: #ffffff;
-    border-bottom: 1px solid #eee;
-}
-
-.encabezado .wrap {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 10px 0;
-}
-
-.logo img {
-    height: 48px;
-    width: auto;
-    display: block;
-}
-
-.menu ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 18px;
-}
-
-.menu a {
-    text-decoration: none;
-    color: #333;
-    padding: 8px 10px;
-    border-radius: 8px;
-}
-
-.menu a:hover,
-.menu a.activo {
-    background: #f3e6d6;
-    color: #6b4a21;
-}
-
-/* ===== Iconos (buscar, casa, carrito) ===== */
-.iconos {
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.iconos img {
-    width: 26px;
-    height: 26px;
-    display: block;
-    opacity: .85;
-}
-
-.iconos img:hover {
-    opacity: 1;
-}
-
-/* ===== Hero ===== */
-.hero {
-    background: linear-gradient(180deg, #fff, #f9f6f2);
-    border-bottom: 1px solid #eee;
-}
-
-.hero .wrap {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 24px;
-    padding: 40px 0;
-}
-
-.hero h1 {
-    margin: 0 0 10px;
-    font-size: 2rem;
-    color: #2b1c0c;
-}
-
-.hero p {
-    margin: 0 0 18px;
-    color: #5b4a3a;
-}
-
-.hero img {
-    width: 100%;
-    height: auto;
-    border-radius: 14px;
-    box-shadow: 0 8px 22px rgba(0, 0, 0, .08);
-}
-
-/* ===== Secciones ===== */
-.seccion {
-    padding: 36px 0;
-}
-
-.seccion h2 {
-    margin-top: 0;
-    color: #2b1c0c;
-}
-
-/* ===== Footer ===== */
-.footer {
-    text-align: center;
-    padding: 24px 0;
-    color: #666;
-    border-top: 1px solid #eee;
-    background: #fff;
-}
-
-.imagen-quienes {
-    display: block;
-    max-width: 600px;
-    margin: 20px auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-.remember-row {
-    margin-top: 10px;
-    gap: 8px;
-}
-
-.remember-row input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-}
-
-.toggle-pass {
-    min-width: 44px;
-}
-
-.error-msg {
-    color: #b00020;
-    margin-top: 4px;
-    display: block;
-    min-height: 1em;
-}
-
-.formulario-contacto input.error {
-    border-color: #b00020;
-    outline-color: #b00020;
-}
-
-.meter {
-    height: 10px;
-    background: #eee;
-    border-radius: 8px;
-    overflow: hidden;
-    margin: 8px 0 4px;
-}
-
-.meter-bar {
-    height: 100%;
-    width: 0%;
-    background: #b0b0b0;
-    transition: width .25s;
-}
-
-.meter-label {
+.help {
     font-size: .9em;
-    color: #555;
-}
-
-.remember-row {
-    margin-top: 10px;
-    gap: 8px;
-}
-
-.toggle-pass {
-    min-width: 44px;
-    border: 1px solid #bbb;
-    background: #fff;
-    border-radius: 8px;
-    padding: 6px 10px;
-    cursor: pointer;
-}
-
-/* === Página en construcción (carrito) === */
-.under-construction {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 40px 24px;
-    background: #fafafa;
-    border-radius: 14px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+    color: #6b6b6b;
     text-align: center;
 }
 
-.under-construction h1 {
-    margin: 0 0 10px;
-    font-size: 2rem;
-    color: #2b1c0c;
-}
-
-.under-construction p {
-    color: #5b4a3a;
-    margin: 0 0 24px;
-}
-
-.under-construction .emoji {
-    font-size: 56px;
-    line-height: 1;
-    display: block;
-    margin-bottom: 10px;
-}
-
-.under-construction a.btn {
-    display: inline-block;
-    padding: 12px 18px;
-    background: #c49b63;
-    color: #fff;
-    border-radius: 10px;
-    text-decoration: none;
-    transition: background .2s;
-}
-
-.under-construction a.btn:hover {
-    background: #a87d4f;
-}
-
-/* ===== Registro/Login ===== */
+/* ======= Login / Registro centrados ======= */
 .auth-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 20px;
 }
 
 .panel {
     background: #fff;
     border-radius: 14px;
-    padding: 22px;
+    padding: 30px;
     box-shadow: 0 8px 22px rgba(0, 0, 0, .06);
+    max-width: 500px;
+    width: 100%;
 }
 
 .panel h3 {
-    margin: 0 0 14px;
+    margin-bottom: 20px;
     color: #2b1c0c;
-}
-
-.help {
-    font-size: .9em;
-    color: #6b6b6b;
+    text-align: center;
 }
 
 .inline {
@@ -676,48 +300,22 @@ body {
     cursor: pointer;
 }
 
-.btn-primary {
-    background: #c49b63;
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    padding: 10px 14px;
-    cursor: pointer;
-}
-
-.btn-primary:hover {
-    background: #a87d4f;
-}
-
-/* mensajes de error debajo de inputs */
 .error-msg {
     color: #b00020;
     margin-top: 4px;
     min-height: 18px;
-    /* evita “saltos” cuando aparece el error */
     display: block;
 }
 
-/* responsive */
-@media (max-width: 900px) {
-    .auth-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* === Buscador global (header) === */
-.iconos {
-    position: relative;
-}
-
+/* ======= Buscador original ======= */
 .buscador {
     position: relative;
     display: inline-block;
+    margin: 20px 0;
 }
 
 .buscador-input {
     display: none;
-    /* se muestra al hacer click en el icono */
     margin-left: 8px;
     padding: 6px 8px;
     border: 1px solid #ccc;
@@ -755,76 +353,15 @@ body {
     background: #eee;
 }
 
-/* móvil */
+/* ======= Responsive ======= */
+@media (max-width: 900px) {
+    .auth-grid {
+        padding: 10px;
+    }
+}
+
 @media (max-width: 600px) {
     .buscador-input {
         min-width: 150px;
     }
-}
-
-/* === Login: inputs iguales a Contacto + ojo embebido === */
-
-/* El formulario de login ya usa .formulario-contacto: reutilizamos estilos */
-.panel-login .formulario-contacto input[type="email"],
-.panel-login .formulario-contacto input[type="text"],
-.panel-login .formulario-contacto input[type="password"] {
-    width: 100%;
-    border: 1px solid #d7d7d7;
-    /* igual que contacto */
-    border-radius: 10px;
-    padding: 12px 14px;
-    outline: none;
-    box-shadow: none;
-    transition: border-color .15s ease, box-shadow .15s ease;
-    background: #fff;
-}
-
-/* foco, igual que contacto (ajusta si usas otra sombra/color) */
-.panel-login .formulario-contacto input:focus {
-    border-color: #c49b63;
-    box-shadow: 0 0 0 3px rgba(196, 155, 99, .18);
-}
-
-/* wrapper para posicionar el botón ojo */
-.field {
-    position: relative;
-    display: block;
-    /* evita que el botón rompa el layout */
-}
-
-/* deja espacio a la derecha del input para el ojo */
-.field>input {
-    padding-right: 44px;
-    /* 44px = ancho del botón + respiración */
-}
-
-/* botón ojo: sin bordes, embebido, centrado vertical */
-.icon-btn {
-    position: absolute;
-    right: 8px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 32px;
-    height: 32px;
-    border: none;
-    /* << quita el borde feo */
-    background: transparent;
-    /* << sin fondo pill */
-    border-radius: 8px;
-    cursor: pointer;
-    display: grid;
-    place-items: center;
-    opacity: .8;
-}
-
-.icon-btn:hover {
-    opacity: 1;
-}
-
-/* mensaje de error debajo, consistente */
-.error-msg {
-    color: #b00020;
-    margin: 4px 0 10px;
-    display: block;
-    min-height: 18px;
 }

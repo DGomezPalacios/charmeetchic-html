@@ -9,15 +9,13 @@
 </head>
 
 <body>
-    <!-- Encabezado -->
-      <!-- Encabezado-->
     <div class="encabezado">
         <div class="logo">
             <img src="../img/LOGO.jpg" alt="Logo de Charme et Chic" />
         </div>
         <div class="menu">
             <ul>
-                <li><a href="../index.html"><img src="../img/casa.png" alt="Inicio" class="icono-menu icono-casa"></a>
+                <li><a href="../index.html"><img src="../img/casa.png" alt="Inicio" class="icono-menu icono-casa"></a></li>
                 <li><a href="quienes_somos.html">Quiénes Somos</a></li>
                 <li><a href="catalogo.html">Catálogo</a></li>
                 <li><a href="personalizacion_reparacion.html">Personalización y Reparación</a></li>
@@ -34,14 +32,21 @@
     <!-- Contenido -->
     <div class="seccion">
         <div class="auth-grid">
-            <!-- Registro -->
             <div class="panel">
-                <h3>Registrarse</h3>
+                <h3>Crear Cuenta</h3>
                 <form id="formRegistro" class="formulario-contacto" novalidate>
-                    
-                    <label for="regNombre">Nombre / Apellidos *</label>
-                    <input id="regNombre" type="text" autocomplete="name" />
-                    <small id="errRegNombre" class="error-msg" aria-live="polite"></small>
+
+                    <label for="regNombres">Nombres *</label>
+                    <input id="regNombres" type="text" autocomplete="given-name" />
+                    <small id="errRegNombres" class="error-msg" aria-live="polite"></small>
+
+                    <label for="regApellidoPaterno">Apellido Paterno *</label>
+                    <input id="regApellidoPaterno" type="text" autocomplete="family-name" />
+                    <small id="errRegApellidoPaterno" class="error-msg" aria-live="polite"></small>
+
+                    <label for="regApellidoMaterno">Apellido Materno *</label>
+                    <input id="regApellidoMaterno" type="text" autocomplete="additional-name" />
+                    <small id="errRegApellidoMaterno" class="error-msg" aria-live="polite"></small>
 
                     <label for="regRut">RUT *</label>
                     <input id="regRut" type="text" placeholder="Ej: 12.345.678-9" />
@@ -58,6 +63,10 @@
                     <label for="regComuna">Comuna *</label>
                     <input id="regComuna" type="text" />
                     <small id="errRegComuna" class="error-msg" aria-live="polite"></small>
+
+                    <label for="regProvincia">Provincia *</label>
+                    <input id="regProvincia" type="text" />
+                    <small id="errRegProvincia" class="error-msg" aria-live="polite"></small>
 
                     <label for="regRegion">Región *</label>
                     <input id="regRegion" type="text" />
@@ -85,12 +94,15 @@
 
                     <button type="submit" class="btn-primary">Registrarse</button>
                     <p id="msgRegistro" class="help" aria-live="polite"></p>
+
+                    <p class="help" style="text-align:center; margin-top:10px;">
+                        ¿Ya tienes una cuenta? <a href="login.html">Inicia sesión aquí</a>.
+                    </p>
                 </form>
             </div>
         </div>
     </div>
 
-    <!-- Footer -->
     <div class="footer">
         <p>&copy; 2025 Charme et Chic. Todos los derechos reservados.</p>
     </div>
