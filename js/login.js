@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Validaciones básicas login
-    const emailOk = (e) => /^[^@\s]+@(duoc\.cl|profesor\.duoc\.cl|gmail\.com)$/i.test(e);
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // acepta cualquier correo válido
     const passOk = (p) => p && p.length >= 4 && p.length <= 10;
 
     const formLogin = document.getElementById("formLogin");
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let valido = true;
 
-        if (!emailOk(email)) {
+        if (!emailRegex.test(email)) {
             document.getElementById("errLoginEmail").textContent = "Correo inválido.";
             valido = false;
         }
