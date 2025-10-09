@@ -319,6 +319,15 @@ body {
 .btn-primary:hover {
     background: #a87d4f;
 }
+/* "Recuérdame" */
+.remember-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* para que checkbox y label estén juntos a la izquierda del grupo */
+    gap: 6px; /* ajusta el espacio entre checkbox y label */
+    width: fit-content; /* que el contenedor ocupe solo lo necesario */
+    margin: 10px auto; /* centra el conjunto dentro del formulario */
+}
 
 /* ======= Buscador ======= */
 .buscador {
