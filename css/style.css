@@ -170,6 +170,13 @@ body {
 .producto button:hover {
     background-color: #222;
 }
+.titulo-seccion {
+    color: #333333;      
+    font-size: 2em;       
+    text-align: center;   
+    margin-bottom: 20px;  
+    font-weight: bold;    
+}
 
 /* ======= Footer ======= */
 .footer {
