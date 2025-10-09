@@ -1,0 +1,113 @@
+    <!DOCTYPE html>
+    <html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Charme et Chic - Registro</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <script src="../js/registro.js" defer></script>
+    </head>
+
+    <body>
+        <!-- Encabezado-->
+        <div class="encabezado">
+            <div class="logo">
+                <img src="../img/LOGO.jpg" alt="Logo de Charme et Chic" />
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="../index.html"><img src="../img/casa.png" alt="Inicio" class="icono-menu icono-casa"></a></li>
+                    <li><a href="quienes_somos.html">Quiénes Somos</a></li>
+                    <li><a href="catalogo.html">Catálogo</a></li>
+                    <li><a href="personalizacion_reparacion.html">Personalización y Reparación</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="iconos">
+                <a href="login.html"><img src="../img/usuario.png" alt="Perfil" /></a>
+                <a href="#"><img src="../img/buscar.png" alt="Buscar" /></a>
+                <a href="carrito.html"><img src="../img/carrito-de-compras.png" alt="Carrito" /></a>
+            </div>
+        </div>
+
+        <!-- Contenido -->
+        <div class="seccion centrada">
+            <h2>Crea tu cuenta</h2>
+            <p>Completa tus datos para registrarte y poder realizar pedidos personalizados en nuestra tienda:</p>
+
+            <form id="formRegistro" class="formulario-contacto" novalidate>
+                <label for="regNombres">Nombres *</label>
+                <input id="regNombres" type="text" autocomplete="given-name" />
+                <small id="errRegNombres" class="error-msg" aria-live="polite"></small>
+
+                <label for="regApellidoPaterno">Apellido Paterno *</label>
+                <input id="regApellidoPaterno" type="text" autocomplete="family-name" />
+                <small id="errRegApellidoPaterno" class="error-msg" aria-live="polite"></small>
+
+                <label for="regApellidoMaterno">Apellido Materno *</label>
+                <input id="regApellidoMaterno" type="text" autocomplete="additional-name" />
+                <small id="errRegApellidoMaterno" class="error-msg" aria-live="polite"></small>
+
+                <label for="regRut">RUT *</label>
+                <input id="regRut" type="text" placeholder="Ej: 12.345.678-9" />
+                <small id="errRegRut" class="error-msg" aria-live="polite"></small>
+
+                <label for="regNacimiento">Fecha de Nacimiento *</label>
+                <input id="regNacimiento" type="date" />
+                <small id="errRegNacimiento" class="error-msg" aria-live="polite"></small>
+
+                <label for="regDireccion">Dirección *</label>
+                <input id="regDireccion" type="text" autocomplete="street-address" />
+                <small id="errRegDireccion" class="error-msg" aria-live="polite"></small>
+
+                <label for="regComuna">Comuna *</label>
+                <input id="regComuna" type="text" />
+                <small id="errRegComuna" class="error-msg" aria-live="polite"></small>
+
+                <label for="regProvincia">Provincia *</label>
+                <input id="regProvincia" type="text" />
+                <small id="errRegProvincia" class="error-msg" aria-live="polite"></small>
+
+                <label for="regRegion">Región *</label>
+                <input id="regRegion" type="text" />
+                <small id="errRegRegion" class="error-msg" aria-live="polite"></small>
+
+                <label for="regEmail">Correo Electrónico *</label>
+                <input id="regEmail" type="email" autocomplete="email" />
+                <small id="errRegEmail" class="error-msg" aria-live="polite"></small>
+
+                <label for="regTelefono">Teléfono Fijo / Celular *</label>
+                <input id="regTelefono" type="tel" placeholder="+56 9 1234 5678" autocomplete="tel" />
+                <small id="errRegTelefono" class="error-msg" aria-live="polite"></small>
+
+                <label for="regPass">Contraseña *</label>
+                <div class="inline">
+                    <input id="regPass" type="password" minlength="6" autocomplete="new-password" style="flex:1" />
+                    <button type="button" class="toggle-pass" data-target="regPass" aria-controls="regPass"
+                        aria-pressed="false" title="Mostrar contraseña">👁</button>
+                </div>
+                <small id="errRegPass" class="error-msg" aria-live="polite"></small>
+
+                <p class="help" style="margin:10px 0;">
+                    Tus datos se utilizarán para procesar tu pedido y mejorar tu experiencia en el sitio.
+                </p>
+
+                <button type="submit" class="btn-primary">Registrarse</button>
+                <p id="msgRegistro" class="help" aria-live="polite"></p>
+
+                <p class="help" style="text-align:center; margin-top:10px;">
+                    ¿Ya tienes una cuenta? <a href="login.html">Inicia sesión aquí</a>.
+                </p>
+            </form>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>&copy; 2025 Charme et Chic. Todos los derechos reservados.</p>
+        </div>
+
+        <script src="../js/buscar.js"></script>
+    </body>
+
+    </html>
